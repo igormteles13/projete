@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <script src="/menu/Login.js"></script>
+    <title>Menu Principal</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
+        }
+        div{
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 80px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        button{
+            background-color: rgb(64, 30, 200);
+            border: none;
+            padding: 35px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+        }
+        button:hover{
+            background-color: rgb(33, 30, 200);
+            cursor: pointer;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px;
+            border-radius: 15px;
+            width: 25%;
+            color: white;
+        }
+        fieldset{
+            border: 3px solid rgb(174, 0, 255);
+        }
+        legend{
+            background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
+            padding: 10px;
+            text-align: center;
+            background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
+            border-radius: 5px;
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .inputUser:focus ~ .labelInput,
+        .inputUser:valid ~ .labelInput{
+            top: -20px;
+            font-size: 12px;
+            color: rgb(174, 0, 255);
+        }
+        #Data_Nascimento{
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        }
+        #submit{
+            background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #submit:hover{
+        background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h1>MENU PRINCIPAL</h1>
+        <button onclick="ChamarCadastroDadosMedicos()">REGISTRAR DADOS MÉDICOS</button>
+        <br><br>
+        <button onclick="AcessarDadosPessoais2()">EXIBIR DADOS PESSOAIS</button>
+        <br><br>
+        <button onclick="AcessarHistoricoMedico()">EXIBIR DADOS MÉDICOS</button>
+    </div>
+    <div style="display:none" id="divDadosPessoais">
+        <ul>
+            <li>Nome: <label id="nome"></label></li>
+            <li>Sobrenome: <label id="sobrenome"></label></li>
+            <li>Endereço: <label id="endereco"></label></li>
+            <li>Telefone: <label id="telefone"></label></li>
+            <li>Tipo Sanguineo: <label id="tipoSanguineo"></label></li>
+            <li>Cidade: <label id="cidade"></label></li>
+            <li>Estado: <label id="estado"></label></li>
+            <li>Genero: <label id="genero"></label></li>
+
+        </ul>
+        <button id="submit" onclick="Voltar()">Voltar</button>
+
+    </div>
+    <div style="display:none" id="divDadosMedicos">
+        <ul>
+            <li>Alergias: <label id="alergias"></label></li>
+            <li>Medicamentos: <label id="medicamentos"></label></li>
+            <li>Receitas: <label id="receitas"></label></li>
+            <li>Prontuárioas Antigos<label id="prontuariosAntigos"></label></li>
+            <li>Doenças Familiares: <label id="doencasFamiliares"></label></li>
+            
+        </ul>
+        <button id="submit" onclick="Voltar()">Voltar</button>
+
+    </div>
+</body>
+</html>
