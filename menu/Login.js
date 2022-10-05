@@ -24,7 +24,7 @@ function Voltar(){
     window.location = "menuprincipal.html"
 }
 function VoltarTelaDeLogin(){
-    window.location = "login.html"
+    window.location = "index.html"
 }
 
 function CadastrarDadosMedicos(){
@@ -226,7 +226,7 @@ function CadastrarDadosPessoais(){
         "Endereço": Endereco,
         "Telefone": Telefone
     })
-    window.location="login.html"
+    window.location="index.html"
 }
 
 function RegistrarFeminino(){

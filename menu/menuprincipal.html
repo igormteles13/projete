@@ -30,7 +30,7 @@
             font-size: 15px;
         }
         button{
-            background-color: rgb(64, 30, 200);
+            background-color: rgb(174, 0, 255);
             border: none;
             padding: 35px;
             width: 100%;
@@ -39,7 +39,7 @@
             font-size: 15px;
         }
         button:hover{
-            background-color: rgb(33, 30, 200);
+            background-color: rgb(19, 31, 185);
             cursor: pointer;
         }
         .box{
@@ -109,38 +109,82 @@
         #submit:hover{
         background-image: linear-gradient(45deg, rgb(174, 0, 255), rgb(0, 26, 255));
         }
+
+        .btn-registrar{
+            background-color: rgba(0, 89, 255, 0.555);
+            
+        }
+        .btn-registrar:hover{
+            background-color: rgba(0, 50, 255, 0.555);
+            cursor: pointer; 
+        }
+
+
+        .btn-pessoais{
+            background-color: rgb(162, 0, 255);  
+        }
+        .btn-pessoais:hover{
+        background-color: rgb(130, 0, 255);
+        cursor: pointer;
+        }
+
+
+        .btn-medico{
+            background-color: rgba(255, 0, 255, 0.856);
+        }
+        .btn-medico:hover{
+            background-color: rgba(220, 0, 255, 0.856);
+            cursor: pointer;    
+        }
     </style>
 </head>
 <body>
+
     <div id="menu">
         <h1>MENU PRINCIPAL</h1>
-        <button onclick="ChamarCadastroDadosMedicos()">REGISTRAR DADOS MÉDICOS</button>
+        <button onclick="ChamarCadastroDadosMedicos()" class="btn-registrar">REGISTRAR DADOS MÉDICOS</button>
         <br><br>
-        <button onclick="AcessarDadosPessoais2()">EXIBIR DADOS PESSOAIS</button>
+        <button onclick="AcessarDadosPessoais2()" class="btn-pessoais">EXIBIR DADOS PESSOAIS</button>
         <br><br>
-        <button onclick="AcessarHistoricoMedico()">EXIBIR DADOS MÉDICOS</button>
+        <button onclick="AcessarHistoricoMedico()" class="btn-medico">EXIBIR DADOS MÉDICOS</button>
     </div>
+
+
     <div style="display:none" id="divDadosPessoais">
+        <h1>DADOS PESSOAIS</h1>
         <ul>
             <li>Nome: <label id="nome"></label></li>
+            <br>
             <li>Sobrenome: <label id="sobrenome"></label></li>
+            <br>
             <li>Endereço: <label id="endereco"></label></li>
+            <br>
             <li>Telefone: <label id="telefone"></label></li>
+            <br>
             <li>Tipo Sanguineo: <label id="tipoSanguineo"></label></li>
+            <br>
             <li>Cidade: <label id="cidade"></label></li>
+            <br>
             <li>Estado: <label id="estado"></label></li>
+            <br>
             <li>Genero: <label id="genero"></label></li>
 
         </ul>
         <button id="submit" onclick="Voltar()">Voltar</button>
-
     </div>
+
+
     <div style="display:none" id="divDadosMedicos">
+        <h1>DADOS MÉDICOS</h1>
         <ul>
             <li>Alergias: <label id="alergias"></label></li>
+            <br>
             <li>Medicamentos: <label id="medicamentos"></label></li>
+            <br>
             <li>Receitas: <label id="receitas"></label></li>
-            <li>Prontuárioas Antigos<label id="prontuariosAntigos"></label></li>
+            <br>
+            <li>Prontuários Antigos: <label id="prontuariosAntigos"></label></li>
+            <br>
             <li>Doenças Familiares: <label id="doencasFamiliares"></label></li>
             
         </ul>
